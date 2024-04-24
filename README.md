@@ -3,11 +3,6 @@ Este proyecto consiste en la implementación de un procesador MIPS utilizando el
 El procesador MIPS es una arquitectura de conjunto de instrucciones (ISA) comúnmente utilizada en aplicaciones incrustadas y académicas debido a su sencillez y eficiencia.
 
 
-**Tabla de Contenido**
-
-[TOCM]
-
-[TOC]
 
 ### Creditos
 Este proyecto está siendo elaborado por:
