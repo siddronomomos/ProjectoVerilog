@@ -8,7 +8,7 @@ También va a contener un script de Python para transformar operaciones de assem
 ## Tabla de contenidos
 - [Descripción](##Descripcion)
 - [Funcionamiento](#Funcionamiento)
-	- [Verilog](##Verilog)
+- [Verilog](##Verilog)
 		- [Operaciones](###Operaciones)
   		- [Tipo R](####Tipo-R) 
 
