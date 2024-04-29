@@ -9,7 +9,7 @@ También va a contener un script de Python para transformar operaciones de assem
 - [Descripción](##Descripcion)
 - [Funcionamiento](#Funcionamiento)
 	- [Verilog](##Verilog)
-		- [Operaciones](###Operaciónes)
+		- [Operaciones](###Operaciones)
 
 
 - [Creditos](#Creditos)
@@ -31,7 +31,7 @@ Como funcionan las instrucciones:
 - shamt (shift amount) es indica la cantidad de bits que se desplazarán en las operaciones de desplazamiento lógico) y desplazamiento aritmético a la izquierda se utilizan.
 - funct son las instrucciones que va a realizar la ALU.
 
-### Operaciónes
+### Operaciones
 #### Tipo R
 
 |  Instrucción | Ensamblador  | Descripción  |
