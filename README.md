@@ -10,6 +10,7 @@ También va a contener un script de Python para transformar operaciones de assem
 - [Funcionamiento](#Funcionamiento)
 	- [Verilog](##Verilog)
 		- [Operaciones](###Operaciones)
+  		- [Tipo R](####Tipo-R) 
 
 
 - [Creditos](#Creditos)
