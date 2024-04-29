@@ -7,14 +7,32 @@ También va a contener un script de Python para transformar operaciones de assem
 
 ## Tabla de contenidos
 - [Descripción](##Descripcion)
-- [Operaciones](#Operaciónes)
-	- [Tipo R](##Tipo-R)
+- [Funcionamiento](#Funcionamiento)
+	- [Verilog](##Verilog)
+		- [Operaciones](###Operaciónes)
 
 
 - [Creditos](#Creditos)
 
-# Operaciónes
-## Tipo R
+# Funcionamiento
+
+## Verilog
+En este programa puedes usar instrucciones de tipo R, este tipo de instrucciones operan principalmente con datos que dentro del registro; luego se decodifica para hacer las operaciones que esta les indica. 
+Estas instrucciones son de tipo binario de 32 bits.
+
+En este programa puedes usar instrucciones de tipo R y este las decodifica para hacer las operaciones que esta les indica. Estas instrucciones son de tipo binario de 32 bits.
+Como funcionan las instrucciones:
+| op  |rs   |  rt | rd | ramt | funct  |
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+|6 bits| 5 bits| 5 bits| 5 bits| 5 bits| 6 bits|
+
+- Los primeros 5 bits es el código de operación que se realizara
+- rd, rs, y rt son registros de 5 bits cada uno. rs y rt son los operandos fuente, y rd es el registro de destino donde se almacenará el resultado.
+- shamt (shift amount) es indica la cantidad de bits que se desplazarán en las operaciones de desplazamiento lógico) y desplazamiento aritmético a la izquierda se utilizan.
+- funct son las instrucciones que va a realizar la ALU.
+
+### Operaciónes
+#### Tipo R
 
 |  Instrucción | Ensamblador  | Descripción  |
 | ------------ | ------------ | ------------ | 
