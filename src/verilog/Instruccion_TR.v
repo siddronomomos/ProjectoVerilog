@@ -10,6 +10,7 @@ wire [32:0]C2;
 wire [32:0]C3;
 wire [2:0]C4;
 wire [32:0]C5;
+wire ZF;
 
 Unida_control Unida_control(
     .inst(TR[31:26]),  
@@ -37,7 +38,7 @@ ALU ALU(
     .op2(C1),
     .sel(C4),
     .res(C3),//salidas
-    .ZF(TR_ZF)
+    .ZF(ZF)
 );
 ram ram(
     .opM(MemToWrite),
