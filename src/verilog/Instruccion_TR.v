@@ -3,13 +3,13 @@ module Intrucciones_TR(
     output reg TR_ZF
 );
 
-// Declaración de los fragmentos de la instrucción
+// DeclaraciÃ³n de los fragmentos de la instrucciÃ³n
 
-wire [32:0]C1;
-wire [32:0]C2;
-wire [32:0]C3;
+wire [31:0]C1;
+wire [31:0]C2;
+wire [31:0]C3;
 wire [2:0]C4;
-wire [32:0]C5;
+wire [31:0]C5;
 wire ZF;
 
 Unida_control Unida_control(
@@ -52,4 +52,7 @@ Mux Mux(
     .selM(MemToRg),
     .res(Dir)
 );
+
+always @(ZF) TR_ZF = ZF;
+
 endmodule
