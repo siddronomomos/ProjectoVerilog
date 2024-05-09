@@ -12,13 +12,13 @@ always@(*)
 	begin
 	  case(inst)
 	   6'd0:
-	begin
-	      MemToRg = 1'b0;
-	      MemToWrite = 1'b1;
-	      RegWrite =1'b0;
-	end
+		begin
+			  MemToRg = 1'b0;
+			  MemToWrite = 1'b1;
+			  RegWrite =1'b0;
+		end
 
-	  default: ALUOP = 1'b0;
+	  default: ALUOP = 3'b0;
 	endcase
 end
 endmodule
