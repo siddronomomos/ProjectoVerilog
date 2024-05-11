@@ -1,6 +1,6 @@
 import os
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, Text
 
 # Definición de las operaciones y sus códigos de operación y función
 operaciones = {
@@ -57,44 +57,42 @@ def decodificar_archivo(archivo_entrada, archivo_salida):
     except Exception as e:
         messagebox.showerror("Error", f"Error al decodificar el archivo: {e}")
 
+# Función para abrir una ventana para editar el archivo
+def editar_archivo(archivo_entrada):
+    editor = tk.Tk()
+    editor.title("Editor de Archivo")
+    
+    with open(archivo_entrada, 'r') as archivo:
+        contenido = archivo.read()
+
+    text = Text(editor)
+    text.insert(tk.END, contenido)
+    text.pack()
+
+    guardar_button = tk.Button(editor, text="Guardar y Compilar", command=lambda: guardar_y_compilar(archivo_entrada, text.get("1.0", tk.END)))
+    guardar_button.pack()
+
+    editor.mainloop()
+
+# Función para guardar el contenido editado y compilar
+def guardar_y_compilar(archivo_entrada, contenido):
+    archivo_salida = archivo_entrada  # Puedes cambiar el nombre del archivo de salida si es necesario
+    with open(archivo_entrada, 'w') as archivo:
+        archivo.write(contenido)
+    decodificar_archivo(archivo_entrada, archivo_salida)
+
 # Función para seleccionar un archivo y ejecutar la decodificación
 def seleccionar_archivo():
     archivo_entrada = filedialog.askopenfilename()
     if archivo_entrada:
-        # Obtener el directorio actual del script
-        directorio_actual = os.path.dirname(os.path.realpath(__file__))
-        archivo_salida = os.path.join(directorio_actual, "Resultado.txt")
-        decodificar_archivo(archivo_entrada, archivo_salida)
-
-def agregar_instruccion():
-    archivo_entrada = filedialog.askopenfilename()
-    if archivo_entrada:
-        # Obtener el directorio actual del script
-        directorio_actual = os.path.dirname(os.path.realpath(__file__))
-        archivo_salida = os.path.join(directorio_actual, "Resultado.txt")
-    try:
-        with open(archivo_entrada, 'a') as entrada:
-            for i in range(1):
-                instruccion_asmr=input("Escribe la instruccion en ASMR: ")
-                entrada.write(instruccion_asmr + "\n")
-                entrada.close()
-            
-        decodificar_archivo(archivo_entrada, archivo_salida)
-    except Exception as e:
-        messagebox.showerror("Error", f"Error al escribir en archivo: {e}")
-
-    
+        editar_archivo(archivo_entrada)
 
 # Interfaz de usuario con Tkinter
 root = tk.Tk()
 root.title("Decodificador Python")
 root.geometry("300x150")
 
-boton_seleccionar_archivo = tk.Button(root, text="Seleccionar Archivo a Decodificar", command=seleccionar_archivo)
+boton_seleccionar_archivo = tk.Button(root, text="Seleccionar Archivo a Editar y Compilar", command=seleccionar_archivo)
 boton_seleccionar_archivo.pack()
-boton_escribir_instrucciones = tk.Button(root, text="Agregar Instruccion ASMR", command=agregar_instruccion)
-boton_escribir_instrucciones.pack()
-
 
 root.mainloop()
-
