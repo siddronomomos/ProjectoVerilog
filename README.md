@@ -62,6 +62,12 @@ Como funcionan las instrucciones:
 | **LW**      | lw $rt, imm($rs)   | Cargar palabra    |
 | **SW**      | sw $rt, imm($rs)   | Almacenar palabra |
 
+#### Tipo J
+
+| Instrucción | Ensamblador | Descripción |
+| ----------- | ----------- | ----------- |
+| **J**       | j target    | Salto       |
+
 ## Python
 
 # Guía de Usuario para el Decodificador de Instrucciones MIPS en Python
@@ -130,10 +136,15 @@ add $1, $2, $3
 addi $1, $2, 10
 ```
 
+### Ejemplo de Instrucción de Tipo J
+
+```
+j 100
+```
+
 ### Limitaciones
 
 - Las instrucciones deben estar separadas por líneas.
-- Actualmente, el programa no soporta instrucciones tipo J o pseudoinstrucciones.
 
 ## Manejo de Errores
 
