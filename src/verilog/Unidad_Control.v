@@ -1,14 +1,15 @@
 //1. Declaracion modulos de salida
 module Unida_control (
     input wire [5:0] inst,
-	output reg  RegDst,
-	output reg  Branch,
-	output reg  MemRead,
+    output reg  RegDst,
+    output reg  Branch,
+    output reg  MemRead,
     output reg  MemToRg,
-	output reg [2:0]ALUOP,
+    output reg [2:0]ALUOP,
     output reg  MemToWrite,
-	output reg  ALUSrc,
-    output reg  RegWrite
+    output reg  ALUSrc,
+    output reg  RegWrite,
+    output reg  Jump
 );
 //2. Definir elementos internos del modulo 
 //3. Declarar los procesos secuenciales, asignaciones y/o instancias
