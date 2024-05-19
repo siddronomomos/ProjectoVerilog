@@ -4,16 +4,31 @@ from tkinter import filedialog, messagebox, Text
 
 # Definición de las operaciones y sus códigos de operación y función
 operaciones = {
-    "and": {"opcode": "000000", "funct": "100100"},
-    "or": {"opcode": "000000", "funct": "100101"},
-    "add": {"opcode": "000000", "funct": "100000"},
-    "sub": {"opcode": "000000", "funct": "100010"},
-    "slt": {"opcode": "000000", "funct": "101010"},
-    "nor": {"opcode": "000000", "funct": "100111"},
-    "xor": {"opcode": "000000", "funct": "100110"},
-    "sll": {"opcode": "000000", "funct": "000000"},
-    "srl": {"opcode": "000000", "funct": "000010"},
-    "sra": {"opcode": "000000", "funct": "000011"}
+    # Tipo R 
+    "sll": {"opcode": "000000", "funct": "000000"},  # shamt se especifica en la instrucción
+    "srl": {"opcode": "000000", "funct": "000010"},  # shamt se especifica en la instrucción
+    "sra": {"opcode": "000000", "funct": "000011"},  # shamt se especifica en la instrucción
+
+    # Tipo R
+    "and": {"opcode": "000000", "funct": "100100", "shamt": "00000"},
+    "or": {"opcode": "000000", "funct": "100101", "shamt": "00000"},
+    "add": {"opcode": "000000", "funct": "100000", "shamt": "00000"},
+    "sub": {"opcode": "000000", "funct": "100010", "shamt": "00000"},
+    "slt": {"opcode": "000000", "funct": "101010", "shamt": "00000"},
+    "nor": {"opcode": "000000", "funct": "100111", "shamt": "00000"},
+    "xor": {"opcode": "000000", "funct": "100110", "shamt": "00000"},
+
+    # Tipo I
+    "addi": {"opcode": "001000"},  
+    "andi": {"opcode": "001100"},  
+    "ori": {"opcode": "001101"},   
+    "xori": {"opcode": "001110"},  
+    "lui": {"opcode": "001111"},   
+    "lw": {"opcode": "100011"},   
+    "sw": {"opcode": "101011"},  
+    "beq": {"opcode": "000100"},  
+    "bne": {"opcode": "000101"},   
+    "slti": {"opcode": "001010"}  
 }
 
 # Función para decodificar una instrucción y convertirla a binario
