@@ -26,6 +26,41 @@ always@(*)
 		  ALUSrc = 1'b0;
 		  RegWrite = 1'b1;
 		end
+		6'd35: 
+			begin 
+	            RegDst = 1'b0;   
+	            Branch = 1'b0;
+	            MemRead = 1'b1; 
+	            MemToRg = 1'b1; 
+	            ALUOP = 3'b000;  
+	            MemToWrite = 1'b0;
+	            ALUSrc = 1'b1; 
+	            RegWrite = 1'b1;
+	        end
+	        
+	        6'd43: 
+			begin 
+	            RegDst = 1'b0;  
+	            Branch = 1'b0;
+	            MemRead = 1'b0;
+	            MemToRg = 1'b0; 
+	            ALUOP = 3'b000; 
+	            MemToWrite = 1'b1; 
+	            ALUSrc = 1'b1; 
+	            RegWrite = 1'b0;
+	        end
+	        
+	        6'd4: 
+			begin 
+	            RegDst = 1'b0;  
+	            Branch = 1'b1;   
+	            MemRead = 1'b0;
+	            MemToRg = 1'b0; 
+	            ALUOP = 3'b001;  
+	            MemToWrite = 1'b0;
+	            ALUSrc = 1'b0;  
+	            RegWrite = 1'b0; 
+	        end
 
 	  default: ALUOP = 3'b0;
 	endcase
