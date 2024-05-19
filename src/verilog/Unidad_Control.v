@@ -62,6 +62,11 @@ always@(*)
 	            RegWrite = 1'b0; 
 	        end
 
+		 6'd2:
+	        begin
+	            Jump = 1'b1;
+	        end
+
 	  default: ALUOP = 3'b0;
 	endcase
 end
