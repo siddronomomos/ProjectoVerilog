@@ -36,27 +36,31 @@ Como funcionan las instrucciones:
 
 #### Tipo R
 
-| Instrucción | Ensamblador        | Descripción                              |
-| ----------- | ------------------ | ---------------------------------------- |
-| **AND**     | and $rd, $rs, $rt  | Operación AND                            |
-| **OR**      | or $rd, $rs, $rt   | Operación OR                             |
-| **ADD**     | add $rd, $rs, $rt  | Suma                                     |
-| **SUB**     | sub $rd, $rs, $rt  | Resta                                    |
-| **SLT**     | slt $rd, $rs, $rt  | Establecer en menos de                   |
-| **NOR**     | nor $rd, $rs, $rt  | Operación NOR                            |
-| **XOR**     | xor $rd, $rs, $rt  | Operación XOR                            |
-| **SLL**     | sll $rd, $rs, $rt  | Desplazamiento a la izquierda lógico     |
-| **SRL**     | srl $rd, $rs, $rt  | Desplazamiento a la derecha lógico       |
-| **SRA**     | sra $rd, $rs, $rt  | Desplazamiento a la izquierda aritmético |
-| **ADDI**    | addi $rd, $rs, inm | Suma inmediata                           |
-| **ANDI**    | andi $rd, $rs, inm | Operación AND inmediata                  |
-| **ORI**     | ori $rd, $rs, inm  | Operación OR inmediata                   |
-| **SLTI**    | slti $rd, $rs, inm | Establecer en menos de inmediato         |
-| **BEQ**     | beq $rs, $rt, inm  | Salto si son iguales                     |
-| **J**       | j inm              | Salto incondicional                      |
-| **NOP**     | nop                | No operación                             |
-| **LW**      | lw $rd, inm($rs)   | Cargar palabra                           |
-| **SW**      | sw $rd, inm($rs)   | Almacenar palabra                        |
+| Instrucción | Ensamblador       | Descripción                              |
+| ----------- | ----------------- | ---------------------------------------- |
+| **AND**     | and $rd, $rs, $rt | Operación AND                            |
+| **OR**      | or $rd, $rs, $rt  | Operación OR                             |
+| **ADD**     | add $rd, $rs, $rt | Suma                                     |
+| **SUB**     | sub $rd, $rs, $rt | Resta                                    |
+| **SLT**     | slt $rd, $rs, $rt | Establecer en menos de                   |
+| **NOR**     | nor $rd, $rs, $rt | Operación NOR                            |
+| **XOR**     | xor $rd, $rs, $rt | Operación XOR                            |
+| **SLL**     | sll $rd, $rs, $rt | Desplazamiento a la izquierda lógico     |
+| **SRL**     | srl $rd, $rs, $rt | Desplazamiento a la derecha lógico       |
+| **SRA**     | sra $rd, $rs, $rt | Desplazamiento a la izquierda aritmético |
+| **NOP**     | nop               | No operación                             |
+
+#### Tipo I
+
+| Instrucción | Ensamblador        | Descripción       |
+| ----------- | ------------------ | ----------------- |
+| **ADDI**    | addi $rd, $rs, imm | Suma inmediata    |
+| **ANDI**    | andi $rd, $rs, imm | AND inmediato     |
+| **ORI**     | ori $rd, $rs, imm  | OR inmediato      |
+| **SLTI**    | slti $rd, $rs, imm | SLT inmediato     |
+| **BEQ**     | beq $rs, $rt, imm  | Salto si igual    |
+| **LW**      | lw $rt, imm($rs)   | Cargar palabra    |
+| **SW**      | sw $rt, imm($rs)   | Almacenar palabra |
 
 ## Python
 
