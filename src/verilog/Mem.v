@@ -7,15 +7,12 @@ module ram(
 );
 reg [31:0]A[0:9];
 
-initial begin
-	$readmemb("Datos.txt",A);
-end
-
 always @*
 	begin
-		if(MemRead)
-			salida<=A[pos];
 		if(MemWrite)
 			A[pos]<=valor;
+		if(MemRead)
+			salida<=A[pos];
+		
 	end
 endmodule
