@@ -10,7 +10,7 @@ reg [7:0] memoria[0:31];
 //3. Declarar los procesos secuenciales, asignaciones y/o instancias
 
 initial begin
-    $readmemb("Operaciones.txt", memoria);
+    $readmemb("operaciones nuevo.txt", memoria);
 end
 
 always@(*)
