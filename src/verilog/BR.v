@@ -9,10 +9,15 @@ module BR (
 );
 
 
-// Declaración de los registros
+// Declaracion de los registros
 reg [32-1:0] registros[32-1:0];
 
 // Proceso para la lectura y escritura de los registros
+
+initial begin
+    $readmemb("Datos.txt", registros);
+end
+
 always @(*) begin
     if (RegEn) begin
         registros[Dir] <= Di;
