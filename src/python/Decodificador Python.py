@@ -28,7 +28,11 @@ operaciones = {
     "sw": {"opcode": "101011"},  
     "beq": {"opcode": "000100"},  
     "bne": {"opcode": "000101"},   
-    "slti": {"opcode": "001010"}  
+    "slti": {"opcode": "001010"},
+    
+    # Tipo J
+    "j": {"opcode": "000010"},
+    "jal": {"opcode": "000011"}
 }
 
 # Función para decodificar una instrucción y convertirla a binario
