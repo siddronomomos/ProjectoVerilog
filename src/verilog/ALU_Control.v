@@ -23,7 +23,7 @@ always @* begin
             6'b100010: senial_ALU = SUB; // Si la instruccion es SUB
             6'b100100: senial_ALU = AND; // Si la instruccion es AND
             6'b100101: senial_ALU = OR; // Si la instruccion es OR
-            6'b100110: senial_ALU = NOR; // Si la instruccion es XOR
+            6'b100111: senial_ALU = NOR; // Si la instruccion es XOR
             6'b101010: senial_ALU = SLT; //Si la instruccion es STL
             default: senial_ALU = NOP; // Cualquier otro caso, no realiza operacion
         endcase
