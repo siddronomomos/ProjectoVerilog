@@ -19,7 +19,7 @@ wire [31:0]C14; // Mux 4 -> BR
 wire C15; // AND -> Mux 2
 wire C16; // Unidad_control -> Mux 1
 wire C17; // Unidad_control -> AND
-wire C18; // Unidad_control -> Mux 3
+wire C18; // Unidad_control -> Mem
 wire C19; // Unidad_control -> Mux 4
 wire [2:0]C20; // Unidad_control -> ControladorALU
 wire C21; // Unidad_control -> Mem
@@ -108,7 +108,8 @@ ALU ALU(
 );
 
 ram ram(
-    .opM(C21),
+    .MemRead(C18),
+    .MemWrite(C21),
     .pos(C11),
     .valor(C7),
     .salida(C13)
