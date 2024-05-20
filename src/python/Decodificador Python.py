@@ -69,8 +69,13 @@ def decodificar_archivo(archivo_entrada, archivo_salida):
                 print("Instrucciones a decodificar: \n")
                 for linea in entrada:
                     instruccion_bin = decodificar_instruccion(linea.strip())
-                    salida.write(instruccion_bin + '\n')
-                    print(instruccion_bin + " \n")
+                    salida.write(instruccion_bin[0:8] + '\n')
+                    salida.write(instruccion_bin[8:16] + '\n')
+                    salida.write(instruccion_bin[16:24] + '\n')
+                    salida.write(instruccion_bin[24:32] + '\n')
+                    
+                    for i in range(0, len(instruccion_bin), 8):
+                        print(instruccion_bin[i:i+8] + '\n')
 
         messagebox.showinfo("Decodificación Exitosa", f"Archivo decodificado y guardado en {archivo_salida}")
     except Exception as e:
@@ -95,7 +100,7 @@ def editar_archivo(archivo_entrada):
 
 # Función para guardar el contenido editado y compilar
 def guardar_y_compilar(archivo_entrada, contenido):
-    archivo_salida = archivo_entrada.split('.')[0] + 'nuevo' + archivo_entrada.split('.')[1]
+    archivo_salida = archivo_entrada.split('.')[0] + ' nuevo.' + archivo_entrada.split('.')[1]
     with open(archivo_entrada, 'w') as archivo:
         archivo.write(contenido)
     decodificar_archivo(archivo_entrada, archivo_salida)
