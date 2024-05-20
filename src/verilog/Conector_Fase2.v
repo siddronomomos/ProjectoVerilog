@@ -115,8 +115,8 @@ ram ram(
 );
 
 Mux Mux4(
-    .OP1(C13),
-    .OP2(C11),
+    .OP1(C11),
+    .OP2(C13),
     .selM(C19),
     .res(C14)
 );
