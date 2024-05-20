@@ -95,7 +95,7 @@ def editar_archivo(archivo_entrada):
 
 # Función para guardar el contenido editado y compilar
 def guardar_y_compilar(archivo_entrada, contenido):
-    archivo_salida = archivo_entrada  # Puedes cambiar el nombre del archivo de salida si es necesario
+    archivo_salida = archivo_entrada.split('.')[0] + 'nuevo' + archivo_entrada.split('.')[1]
     with open(archivo_entrada, 'w') as archivo:
         archivo.write(contenido)
     decodificar_archivo(archivo_entrada, archivo_salida)
