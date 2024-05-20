@@ -25,6 +25,7 @@ wire [2:0]C20; // Unidad_control -> ControladorALU
 wire C21; // Unidad_control -> Mem
 wire C22; // Unidad_control -> Mux 3
 wire C23; // Unidad_control -> BR
+wire [4:0]C24; // Mux 1 -> BR
 
 wire [31:0]TR;
 
@@ -50,14 +51,14 @@ Mux Mux1(
     .OP1(TR[20:16]),
     .OP2(TR[15:11]),
     .selM(C16),
-    .res(Dir)
+    .res(C24)
 );
 
 BR BR(
     .RA1(TR[25:21]),
     .RA2(TR[20:16]),
     .Di(C14),
-    .Dir(TR[15:11]),
+    .Dir(C24),
     .RegEn(C23),
     .DR1(C7),
     .DR2(C8)
