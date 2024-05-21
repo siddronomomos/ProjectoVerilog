@@ -19,12 +19,13 @@ wire [31:0]C14; // Mux 4 -> BR
 wire C15; // AND -> Mux 2
 wire C16; // Unidad_control -> Mux 1
 wire C17; // Unidad_control -> AND
-wire C18; // Unidad_control -> Mux 3
+wire C18; // Unidad_control -> Mem
 wire C19; // Unidad_control -> Mux 4
 wire [2:0]C20; // Unidad_control -> ControladorALU
 wire C21; // Unidad_control -> Mem
 wire C22; // Unidad_control -> Mux 3
 wire C23; // Unidad_control -> BR
+wire [4:0]C24; // Mux 1 -> BR
 
 wire [31:0]TR;
 
@@ -50,14 +51,14 @@ Mux Mux1(
     .OP1(TR[20:16]),
     .OP2(TR[15:11]),
     .selM(C16),
-    .res(Dir)
+    .res(C24)
 );
 
 BR BR(
     .RA1(TR[25:21]),
     .RA2(TR[20:16]),
     .Di(C14),
-    .Dir(TR[15:11]),
+    .Dir(C24),
     .RegEn(C23),
     .DR1(C7),
     .DR2(C8)
@@ -108,15 +109,16 @@ ALU ALU(
 );
 
 ram ram(
-    .opM(C21),
+    .MemRead(C18),
+    .MemWrite(C21),
     .pos(C11),
     .valor(C7),
     .salida(C13)
 );
 
 Mux Mux4(
-    .OP1(C13),
-    .OP2(C11),
+    .OP1(C11),
+    .OP2(C13),
     .selM(C19),
     .res(C14)
 );

@@ -17,6 +17,11 @@ initial
 		clk=~clk;
 	end
 
+initial
+    begin
+        out_address = 32'b0;
+    end
+
 always@(posedge clk)
     begin
         out_address = in_address;
